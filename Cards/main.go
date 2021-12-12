@@ -3,8 +3,12 @@ package main
 func main() {
 
 	cards := newDeck()
-	hand, remainingDeck := cards.deal(3)
-	hand.print()
-	remainingDeck.print()
 
+	err := cards.saveToFile("cards")
+	if err != nil {
+		return
+	}
+
+	cards.shuffle()
+	cards.print()
 }
