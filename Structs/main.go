@@ -22,7 +22,7 @@ type person struct {
 	dogs      []dog
 }
 
-func (d *dog) updateName(newName string) {
+func (d dog) updateName(newName string) {
 	d.name = newName
 }
 
@@ -45,7 +45,6 @@ func main() {
 		name:      "Tanjirs",
 		birthYear: 2014,
 	}
-
 	tanj.updateName("Tanj")
 
 	emil := person{
