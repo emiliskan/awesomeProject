@@ -9,6 +9,7 @@ func main() {
 		return
 	}
 
-	cards.shuffle()
-	cards.print()
+	hand, _ := deal(cards, 5)
+	hand.shuffle()
+	hand.print()
 }

@@ -13,13 +13,13 @@ type deck []string
 
 func newDeck() deck {
 
-	cardSuits := []string{
+	cardSuits := [3]string{
 		"Spades",
 		"Diamonds",
 		"Hearts",
 	}
 
-	cardValues := []string{
+	cardValues := [4]string{
 		"Ace",
 		"Two",
 		"Three",
@@ -63,14 +63,14 @@ func (d deck) shuffle() {
 	}
 }
 
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
+
 func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
-}
-
-func (d deck) deal(handSize int) (deck, deck) {
-	return d[:handSize], d[handSize:]
 }
 
 func (d deck) toString() string {
